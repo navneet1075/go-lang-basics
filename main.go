@@ -18,8 +18,20 @@ func (per person) speak() {
 	fmt.Println("my name is", per.fname, per.lname)
 }
 
+// func (per secretAgent) speak() {
+// 	fmt.Println("my name is", per.fname, per.lname, per.licenseToKill)
+// }
+
 func (per secretAgent) speak() {
 	fmt.Println("my name is", per.fname, per.lname, per.licenseToKill)
+}
+
+type human interface {
+	speak()
+}
+
+func saySomething(h human) {
+	h.speak()
 }
 
 func main() {
@@ -28,7 +40,7 @@ func main() {
 		"navneet",
 		"pathak",
 	}
-	p1.speak()
+	saySomething(p1)
 
 	sa1 := secretAgent{
 		person{"james",
@@ -36,5 +48,6 @@ func main() {
 			"bond"},
 		true,
 	}
-	sa1.speak()
+	saySomething(sa1)
+	//sa1.person.speak()
 }
