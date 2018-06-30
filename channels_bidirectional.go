@@ -2,10 +2,7 @@ package main
 
 import (
 	"fmt"
-	"sync"
 )
-
-var wg sync.WaitGroup
 
 func myFunction(ch chan int) {
 	ch <- 10
