@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func f(c chan string) {
+func f(c chan<- string) {
 	fmt.Println("start of goroutine")
 	c <- "hello"
 }
