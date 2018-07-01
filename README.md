@@ -2,4 +2,4 @@
 
  **it is possible to convert a bidirectional channel to a send only or receive only channel but not the vice versa.**
 
- ** Senders have the ability to close the channel to notify receivers that no more data will be sent on the channel.**
+ **Senders have the ability to close the channel to notify receivers that no more data will be sent on the channel.**
