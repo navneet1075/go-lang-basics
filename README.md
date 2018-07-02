@@ -25,3 +25,5 @@ lock_and_call(0) — because i > 0
 m.lock() — deadlock, because m is already locked, so the executing thread will block, waiting for itself.
 Replacing the mutex with a recursive one solves the problem, because the final m.lock() will succeed without blocking.
 
+important concepts with links:
+**https://github.com/golang/go/wiki/MethodSets**
