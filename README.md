@@ -27,3 +27,8 @@ Replacing the mutex with a recursive one solves the problem, because the final m
 
 important concepts with links:
 **https://github.com/golang/go/wiki/MethodSets**
+
+**defer statments**
+1. A deferred function's arguments are evaluated when the defer statement is evaluated.
+2. Deferred function calls are executed in Last In First Out order after the surrounding function returns.
+3.Deferred functions may read and assign to the returning function's named return values.
