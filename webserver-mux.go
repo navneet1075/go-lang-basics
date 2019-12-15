@@ -33,6 +33,9 @@ func getArticles(response http.ResponseWriter, request *http.Request) {
 	fmt.Fprintf(response, "%v\n", articles)
 }
 
+func init() {
+	insertArticlesIntoMap()
+}
 func insertArticlesIntoMap() {
 	for _, article := range articles {
 		articleMap[article.Name] = article
@@ -53,6 +56,5 @@ func registerHandlerForApplication() {
 }
 
 func main() {
-	insertArticlesIntoMap()
 	registerHandlerForApplication()
 }
