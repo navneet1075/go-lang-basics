@@ -35,3 +35,37 @@ important concepts with links:
 
 
 links: https://medium.com/rungo/the-anatomy-of-maps-in-go-79b82836838b
+
+
+Sync.Pool design :
+
+GoLang internal pool design :
+
+
+Get method : 
+
+	1. request internal pool :
+
+	if first usage : then create a pool (one poolLocal per processor (GOMAXPROCS))
+
+	if not return the pool used by the local processor
+
+	each poolLocal has 2 attributes : private and shared
+
+
+	2. Does the private attibute of the internal pool  has a item : 
+		a. if yes -> remove the object from internal pool local return it.
+		b. if no -> does the shared attribute of any other processors pool local have a item ?.
+		 1. if yes ->  steal it
+		 2. if no -> then create a new item using New function and store in the private attribute of the localPool.
+
+
+
+Put method :
+
+1. if the internal pool local has a item in private attribute ?
+
+	yes : -> stored in shaed attribute of the internal pool local of the processor on which the goroutine is running.
+	no : -> stored in the private atribute of the internal pool local of the processor on which the goroutine is running.
+
+
