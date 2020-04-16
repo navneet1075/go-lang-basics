@@ -42,15 +42,18 @@ Sync.Pool design :
 GoLang internal pool design :
 
 
+GoLang internal pool design :
+
+
 Get method : 
 
-	1. request internal pool :
+	```1. request internal pool :
 
 	if first usage : then create a pool (one poolLocal per processor (GOMAXPROCS))
 
 	if not return the pool used by the local processor
 
-	each poolLocal has 2 attributes : private and shared
+	each poolLocal has 2 attributes : private and shared```
 
 
 	2. Does the private attibute of the internal pool  has a item : 
@@ -65,7 +68,6 @@ Put method :
 
 1. if the internal pool local has a item in private attribute ?
 
-	yes : -> stored in shaed attribute of the internal pool local of the processor on which the goroutine is running.
-	no : -> stored in the private atribute of the internal pool local of the processor on which the goroutine is running.
-
-
+	```yes : -> stored in shaed attribute of the internal pool local of the processor on which the goroutine is running.
+	
+	   no : -> stored in the private atribute of the internal pool local of the processor on which the goroutine is running.```
