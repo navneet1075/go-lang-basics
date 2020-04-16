@@ -37,7 +37,7 @@ important concepts with links:
 links: https://medium.com/rungo/the-anatomy-of-maps-in-go-79b82836838b
 
 
-Sync.Pool internal design :
+**Sync.Pool internal design**
 
 **Get method** 
 
