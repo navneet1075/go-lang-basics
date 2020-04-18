@@ -60,3 +60,34 @@ links: https://medium.com/rungo/the-anatomy-of-maps-in-go-79b82836838b
 	yes : -> stored in shaed attribute of the internal pool local of the processor on which the goroutine is running.
 	no : -> stored in the private atribute of the internal pool local of the processor on which the goroutine is running.
 ```
+
+**go maps**
+
+1. maps iteration order is not guaranteed.
+2. maps are not goroutine safe . use a struct with sync.RWMutex or some other concurrent safe primitive to have the goroutine behavior. 
+	
+	type struct Constructor {
+		
+		sync.RWMutex
+		myMap map[int]string
+	
+	}
+	cons := Constructor {
+		
+		myMap = make(map[int]string)
+	
+	}	
+	
+	to read :
+	cons.RLock()
+	defer cons.RUnlock()
+	// read the data here
+	
+	to write :
+	cons.Lock()
+	defer cons.Unlock()
+	// write the data here
+	
+	
+	
+	
