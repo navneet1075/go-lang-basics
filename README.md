@@ -89,5 +89,16 @@ links: https://medium.com/rungo/the-anatomy-of-maps-in-go-79b82836838b
 	// write the data here
 	
 	
+
+Memory Management in Go:
+
+1. checking the memory allocation in program with memory flags
+	```go build -gcflags "--m -m" program-name.go
+	```
+2. go tool compile "-m" program-name.go 
+
+generate assembly and see the calls 
+3. go tool compile -S program-name.go
 	
 	
+
