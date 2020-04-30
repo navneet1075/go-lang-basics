@@ -101,4 +101,15 @@ generate assembly and see the calls
 3. go tool compile -S program-name.go
 	
 	
+scheduler tracing can be done using :
+GODEBUG=scheddetail=1,schedtrace=1000 ./'program-name'
+
+important articles on go memory management and scheduler:
+
+1. https://blog.learngoprogramming.com/a-visual-guide-to-golang-memory-allocator-from-ground-up-e132258453ed
+2. https://povilasv.me/go-scheduler/
+3. https://www.ardanlabs.com/blog/2015/02/scheduler-tracing-in-go.html
+4. http://www.cs.columbia.edu/~aho/cs6998/reports/12-12-11_DeshpandeSponslerWeiss_GO.pdf
+5. https://morsmachine.dk/go-scheduler
+
 
